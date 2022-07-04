@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * Description: A program that prints all possible combinations of two two-digit numbers.
+ * Description: Prints all possible combinations of two two-digit numbers.
  * Return: 0 - SUCCESS
  */
 
@@ -17,11 +17,11 @@ int main(void)
 		while (no2 < 100)
 		{
 			if (no1 < no2)
-			{	
-				putchar(no1 / 10+ '0');
+			{
+				putchar(no1 / 10 + '0');
 				putchar((no1 % 10) + '0');
 				putchar(' ');
-				putchar(no2 / 10+ '0');
+				putchar(no2 / 10 + '0');
 				putchar((no2 % 10) + '0');
 
 			if (no1 < 98)
@@ -34,7 +34,7 @@ int main(void)
 			no2++;
 		}
 
-		no1++;;
+		no1++;
 	}
 
 	putchar(10);
