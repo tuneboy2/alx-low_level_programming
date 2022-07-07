@@ -18,16 +18,19 @@ int main(void)
 	while (no <= 100)
 	{
 		if (no % 3 == 0 && no % 5 == 0)
-			printf("FizzBuzz ");
+			printf("FizzBuzz");
 
 		else if (no % 5 == 0)
-			printf("Buzz ");
+			printf("Buzz");
 
 		else if (no % 3 == 0)
-			printf("Fizz ");
+			printf("Fizz");
 
 		else
-			printf("%d ", no);
+			printf("%d", no);
+
+		if (no != 100)
+			printf(" ");
 
 		no++;
 	}
