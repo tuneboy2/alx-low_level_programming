@@ -18,17 +18,18 @@ void _puts(char *str)
 	_putchar(10);
 }
 
-/*
+/**
+ * _puts - A function that prints a string
  * void _puts(char *str)
  * {
- * 	int i = 0;
+ *	int i = 0;
  *
- * 	while (str[i] != '\0';
- * 	{
- * 		_putchar(str[i]);
- * 		i++;
- * 	}
+ *	while (str[i] != '\0';
+ *	{
+ *		_putchar(str[i]);
+ *		i++;
+ *	}
  *
- * 	_putchar(10);
+ *	_putchar(10);
  * }
  */
