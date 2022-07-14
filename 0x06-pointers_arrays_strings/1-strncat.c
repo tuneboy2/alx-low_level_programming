@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strncat - A function that concatenates two strings with respect to a given number.
+ * _strncat - Concatenates two strings with respect to a given number.
  * @dest: Parameter 1
  * @src: Parameter containing string to be added to Parameter 1
  * @n: Number controlling length of string to be added.
