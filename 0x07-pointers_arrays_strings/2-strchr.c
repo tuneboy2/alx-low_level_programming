@@ -11,13 +11,9 @@
 
 char *_strchr(char *s, char c)
 {
-	int i = 0, count;
+	int i = 0;
 
-	for (count = 0; s[i] != '\0'; i++)
-		count++;
-
-	i = 0;
-	while (i < count)
+	while (s[i] >= '\0')
 	{
 		if (s[i] == c)
 			return (s + i);
