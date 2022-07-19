@@ -12,26 +12,16 @@
 
 void print_diagsums(int *a, int size)
 {
-	unsigned int sum, no = size + 1, no1 = size * (size - 1), sum1;
-	int i = 1;
+	int sum = 0, sum1 = 0, new_size = size * size, i, j;
 
-	sum = a[0];
-	sum1 = a[no1];
-
-	while (i < size)
+	for (i = 0, j = 1; i < new_size; i++, j++)
 	{
-		sum += a[no];
-		no += size + 1;
-		i++;
+		if (i % (size + 1) == 0)
+			sum += a[i];
+
+		if (j % (size - 1) == 0 && j < (new_size - 1))
+			sum1 += a[j];
 	}
 
-	i = 0;
-	while (i < size)
-	{
-		no1 -= size - 1;
-		sum1 += a[no1];
-		i++;
-	}
-
-	printf("%u, %u\n", sum, sum1);
+	printf("%d, %d\n", sum, sum1);
 }
