@@ -15,6 +15,13 @@ char *str_concat(char *s1, char *s2)
 	int i, j, l, m, count = 0;
 	char *array;
 
+	if (s1 == NULL)
+		s1 = "";
+
+	if (s2 == NULL)
+		s2 = "";
+
+	/* Length for s1 and s2 */
 	for (i = 0; s1[i] != '\0'; i++)
 		count++;
 
