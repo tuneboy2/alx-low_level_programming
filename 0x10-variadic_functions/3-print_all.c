@@ -18,7 +18,7 @@ void print_all(const char * const format, ...)
 	va_list arg;
 	int count = 0, i = 0;
 
-	while (format[i] != '\0')
+	while (format && format[i] != '\0')
 	{
 		switch (format[i])
 		{
@@ -71,8 +71,9 @@ void print_all(const char * const format, ...)
 			}
 			case 'f':
 			{
-				double num = va_arg(arg, double);
+				float num;
 
+				num = va_arg(arg, double);
 				printf("%f", num);
 				print_gap(i, count);
 				break;
