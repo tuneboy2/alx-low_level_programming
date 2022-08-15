@@ -29,8 +29,8 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	/* Handle if head pointer is NULL */
 	if (*head == NULL)
 	{
-	       *head = new_node;
-	       return (*head);
+		*head = new_node;
+		return (*head);
 	}
 
 	/* Traverse to the end of the list */
