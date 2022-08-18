@@ -2,6 +2,7 @@
 #define MAIN_H
 
 #include <stdlib.h>
+#include <limits.h>
 
 unsigned int _pow(int x, int y);
 unsigned int binary_to_uint(char *b);
