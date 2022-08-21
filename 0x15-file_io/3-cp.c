@@ -13,12 +13,12 @@ void error_file(int file_from, int file_to, char *argv)
 {
 	if (file_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	if (file_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 }
@@ -44,7 +44,7 @@ int main(int ac, char **av)
 
 	file_from = open(av[1], O_RDONLY);
 	file_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	error_file(file_from, file_to, *av);
+	error_file(file_from, file_to, **av);
 
 	nrd = 1024;
 	while (nrd == 1024)
