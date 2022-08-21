@@ -9,7 +9,7 @@
  * Return: void
  */
 
-void error_file(int file_from, int file_to, char *argv)
+void error_file(int file_from, int file_to, char **argv)
 {
 	if (file_from == -1)
 	{
@@ -44,16 +44,16 @@ int main(int ac, char **av)
 
 	file_from = open(av[1], O_RDONLY);
 	file_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	error_file(file_from, file_to, **av);
+	error_file(file_from, file_to, av);
 
 	nrd = 1024;
 	while (nrd == 1024)
 	{
 		nrd = read(file_from, buffer, 1024);
-		error_file(nrd, 0, av[1]);
+		error_file(nrd, 0, av);
 
 		nwr = write(file_to, buffer, nrd);
-		error_file(0, nwr, av[2]);
+		error_file(0, nwr, av);
 	}
 
 	err_close = close(file_from);
