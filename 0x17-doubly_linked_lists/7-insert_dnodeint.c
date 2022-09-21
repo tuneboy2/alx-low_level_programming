@@ -1,0 +1,53 @@
+#include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * insert_dnodeint_at_index - Function that insert a new node at given position
+ * @h: Pointer to the list
+ * @idx: Index value of position
+ * @n: Data to be inserted in node
+ *
+ * Return: Head Address
+ */
+
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
+{
+	dlistint_t *new;
+	dlistint_t *current = *h;
+	unsigned int size = 0;
+
+	new = malloc(sizeof(dlistint_t));
+	if (!new)
+	{
+		dprintf(2, "Failed to Allocate Memory\n");
+		return (NULL);
+	}
+
+	new->n = n;
+
+	if (idx == 0)
+	{
+		new->next = *h;
+		new->prev = NULL;
+		*h = new;
+		return (*h);
+	}
+
+	while (current)
+	{
+		if (size == idx - 1)
+		{
+			new->next = current->next;
+			current->next->prev = new;
+			current->next = new;
+			new->prev = current;
+			break;
+		}
+
+		current = current->next;
+		size++;
+	}
+
+	return (*h);
+}
