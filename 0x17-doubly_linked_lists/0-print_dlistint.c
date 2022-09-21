@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * print_dlistint - A function that prints all the elements of a dlistint_t list.
+ * print_dlistint - Function that prints all the elements of a dlistint_t list
  * @h: The list to be printed
  *
  * Return: The Size of the List
