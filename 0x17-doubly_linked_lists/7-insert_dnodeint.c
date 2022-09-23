@@ -13,16 +13,16 @@
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new;
-	dlistint_t *current = *h;
+	dlistint_t *new, *current = *h;
 	unsigned int size = 0, i;
+
+	if (*h == NULL)
+		return (NULL);
 
 	new = malloc(sizeof(dlistint_t));
 	if (!new)
-	{
-		dprintf(2, "Failed to Allocate Memory\n");
 		return (NULL);
-	}
+
 	new->n = n;
 	if (idx == 0)
 	{
