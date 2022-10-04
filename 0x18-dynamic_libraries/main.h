@@ -1,7 +1,12 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdlib.h>
+
+int add(int, int);
+int mul(int, int);
+int div(int, int);
+int mod(int, int);
+int sub(int, int);
 
 int _putchar(char c);
 int _islower(int c);
