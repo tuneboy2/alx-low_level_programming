@@ -42,6 +42,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		prev_node = ht->array[index];
+		while (ht->array[index] != NULL)
+		{
+			if (strcmp(key, ht->array[index]->key) == 0)
+			{
+				ht->array[index]->value = value;
+				return (1);
+			}
+			ht->array[index] = ht->array[index]->next;
+		}
 		ht->array[index] = malloc(sizeof(hash_node_t));
 		if (!ht->array[index])
 			return (ret);
