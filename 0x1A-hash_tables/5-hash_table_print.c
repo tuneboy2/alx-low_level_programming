@@ -11,11 +11,9 @@ void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long int i;
 	int flag = 0;
+
 	if (!ht)
-	{
-		printf("{}\n");
 		return;
-	}
 
 	for (i = 0; i < ht->size; i++)
 	{
